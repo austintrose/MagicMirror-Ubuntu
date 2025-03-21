@@ -8,8 +8,8 @@ fi
 
 source /home/magic/GITHUB_PERSONAL_ACCESS_TOKEN.env
 rm -rf /home/magic/configrepo
-git clone https://${GITHUB_PERSONAL_ACCESS_TOKEN}@github.com/austintrose/MagicMirror-Ubuntu.git /home/magic/configrepo
-rm /home/magic/MagicMirror/config/config.js
+git clone --depth 1 https://${GITHUB_PERSONAL_ACCESS_TOKEN}@github.com/austintrose/MagicMirror-Ubuntu.git /home/magic/configrepo
+rm -f  /home/magic/MagicMirror/config/config.js
 cp /home/magic/configrepo/config/config.js /home/magic/MagicMirror/config/config.js
 chmod 664 /home/magic/MagicMirror/config/config.js
 

@@ -53,8 +53,7 @@ let config = {
 		{
 			module: "calendar",
 			header: "Austin Zhanna Shared Calendar",
-			position: "upper_third",
-			// position: "top_left",
+			position: "bottom_left",
 			config: {
 				calendars: [
 					{
@@ -90,7 +89,7 @@ let config = {
 
 		{
 			module: "MMM-CalendarExt3",
-			position: "lower_third",
+			position: "top_center",
 			title: "",
 			config: {
 				mode: "week",
@@ -99,7 +98,22 @@ let config = {
 				maxEventLines: 5,
 				firstDayOfWeek: 1,
 				calendarSet: ['azshare'],
-				weeksInView: 3,
+				weeksInView: 6,
+				fontSize: '20px',
+				eventHeight: '22px',
+				useWeather: false
+			}
+		},
+		{
+			module: "MMM-CalendarExt3",
+			position: "bottom_right",
+			title: "",
+			config: {
+				mode: "day",
+				instanceId: "az1",
+				locale: 'en-US',
+				maxEventLines: 5,
+				calendarSet: ['azshare'],
 				useWeather: false
 			}
 		},

@@ -7,8 +7,11 @@ else
 fi
 
 source /home/magic/GITHUB_PERSONAL_ACCESS_TOKEN.env
-rm -rf /home/magic/repo
-git clone https://${GITHUB_PERSONAL_ACCESS_TOKEN}@github.com/austintrose/MagicMirror-Ubuntu.git repo
+rm -rf /home/magic/configrepo
+git clone https://${GITHUB_PERSONAL_ACCESS_TOKEN}@github.com/austintrose/MagicMirror-Ubuntu.git /home/magic/configrepo
+rm /home/magic/MagicMirror/config/config.js
+cp /home/magic/configrepo/config/config.js /home/magic/MagicMirror/config/config.js
+chmod 664 /home/magic/MagicMirror/config/config.js
 
 cd /home/magic/MagicMirror || exit 1
 ( cd /home/magic/MagicMirror && /usr/bin/npm run start & 2>&1 ) | /usr/bin/systemd-cat -t MagicMirror -p info

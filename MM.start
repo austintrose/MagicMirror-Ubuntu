@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [[ $1 = 0 ]] ; then
+        DISPLAY=:0
+else
+        DISPLAY="${DISPLAY:=:0}"
+fi
+
+cd /home/magic/MagicMirror || exit 1
+( cd /home/magic/MagicMirror && /usr/bin/npm run start & 2>&1 ) | /usr/bin/systemd-cat -t MagicMirror -p info
